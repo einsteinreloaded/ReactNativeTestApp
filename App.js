@@ -4,11 +4,13 @@ import {
   StyleSheet,
   Text,
   TextInput,
+  ScrollView,
   View
 } from 'react-native';
-import Spock from './images';
-import Blink from './blink';
-import ButtonBasics from './button'
+import Spock from './components/images';
+import Blink from './components/blink';
+import ButtonBasics from './components/button';
+
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -16,25 +18,27 @@ export default class App extends Component {
   }
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome Sparkie!!
-        </Text>
-        <Text style={styles.instructions}>
-          May the Code be with you!!!
-        </Text>
-        <TextInput
-          style={{height: 40, width:200}}
-          placeholder="Pizza Encryption"
-          onChangeText={(text) => this.setState({text})}
-        />
-        <Text style={{padding: 10, fontSize: 42}}>
-          {this.state.text.split(' ').map((word) => word && '🍕').join(' ')}
-        </Text>
-        <Blink style={styles.instructions} text="This will blink forever!"/>
-        <Spock/>
-        <ButtonBasics/>
-      </View>
+      <ScrollView>
+        <View style={styles.container}>
+          <Text style={styles.welcome}>
+            Welcome Sparkie!!
+          </Text>
+          <Text style={styles.instructions}>
+            May the Code be with you!!!
+          </Text>
+          <TextInput
+            style={styles.TextInput}
+            placeholder="Pizza Encryption"
+            onChangeText={(text) => this.setState({text})}
+          />
+          <Text style={styles.pizzaText}>
+            {this.state.text.split(' ').map((word) => word && '🍕').join(' ')}
+          </Text>
+          <Blink style={styles.instructions} text="This will blink forever!"/>
+          <Spock/>
+          <ButtonBasics/>
+        </View>
+      </ScrollView>
     );
   }
 }
@@ -56,4 +60,12 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  TextInput: {
+    height: 40, 
+    width:200
+  },
+  pizzaText: {
+    padding: 10, 
+    fontSize: 42
+  }
 });
