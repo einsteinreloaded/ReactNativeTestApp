@@ -18,6 +18,7 @@ export default class PizzaEncryptionComponent extends React.Component {
     render() {
       return (
         <View style={styles.container}>
+        <ScrollView contentContainerStyle={{alignItems:'center'}}>
             <TextInput
                 style={styles.TextInput}
                 placeholder="Pizza Encryption"
@@ -26,6 +27,7 @@ export default class PizzaEncryptionComponent extends React.Component {
             <Text style={styles.pizzaText}>
                 {this.state.text.split(' ').map((word) => word && '🍕').join(' ')}
             </Text>
+        </ScrollView>
         </View>
       );
     }
@@ -34,7 +36,6 @@ export default class PizzaEncryptionComponent extends React.Component {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      justifyContent: 'center',
       alignItems: 'center',
       backgroundColor: 'steelblue',
     },
@@ -49,10 +50,12 @@ const styles = StyleSheet.create({
       marginBottom: 5,
     },
     TextInput: {
-      height: 40, 
+      textAlign: 'center',
+      height: 70, 
       width:200
     },
     pizzaText: {
+      textAlign: 'center',
       padding: 10, 
       fontSize: 42
     }

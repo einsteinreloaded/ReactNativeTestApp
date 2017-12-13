@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { Image } from 'react-native';
 
 export default class Spock extends Component {
+  constructor(props){
+    super(props);
+  }
   render() {
-    let pic = {
-      uri: 'http://www.startrek.com/uploads/assets/db_articles/6ee08d45f7a94d4c6fda9ee84833054a687ddf77.jpg'
-    };
     return (
-      <Image source={pic} style={{width: 193, height: 110}}/>
+      <Image source={this.props.url} style={{width: 193, height: 110}}/>
     );
   }
 }
