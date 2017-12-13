@@ -7,9 +7,13 @@ import {
   ScrollView,  
   View
 } from 'react-native';
+import QRCode from 'react-native-qrcode';
+
+
+
 export default class PizzaEncryptionComponent extends React.Component {
     static navigationOptions = {
-      title: 'Pizza Encryption',
+      title: 'QR Encryption',
     };
     constructor(props) {
         super(props);
@@ -24,9 +28,11 @@ export default class PizzaEncryptionComponent extends React.Component {
                 placeholder="Pizza Encryption"
                 onChangeText={(text) => this.setState({text})}
                 />
-            <Text style={styles.pizzaText}>
-                {this.state.text.split(' ').map((word) => word && '🍕').join(' ')}
-            </Text>
+            <QRCode
+                value={this.state.text}
+                size={200}
+                bgColor='purple'
+                fgColor='white'/>
         </ScrollView>
         </View>
       );
