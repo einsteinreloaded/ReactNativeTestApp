@@ -4,6 +4,7 @@ import {
   StyleSheet,
   Text,
   TextInput,
+  ScrollView,  
   View
 } from 'react-native';
 export default class PizzaEncryptionComponent extends React.Component {

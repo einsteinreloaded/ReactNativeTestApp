@@ -3,7 +3,6 @@ import {
   Platform,
   StyleSheet,
   Text,
-  ScrollView,
   View
 } from 'react-native';
 import Spock from './images';
@@ -21,7 +20,6 @@ export default class HomePageComponent extends Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <ScrollView>
         <View style={styles.container}>
           <Text style={styles.welcome}>
             Welcome Sparkie!!
@@ -34,7 +32,6 @@ export default class HomePageComponent extends Component {
           <Spock/>
           <ButtonBasics onPress={() => navigate('Encrypt')}/>
         </View>
-      </ScrollView>
     );
   }
 }
