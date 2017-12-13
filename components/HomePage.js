@@ -21,9 +21,6 @@ export default class HomePageComponent extends Component {
   render() {
     const { navigate } = this.props.navigation;
     
-    let pic = {
-        uri: 'http://www.startrek.com/uploads/assets/db_articles/6ee08d45f7a94d4c6fda9ee84833054a687ddf77.jpg'
-      };
     return (
         <View style={styles.container}>
           <Text style={styles.welcome}>
@@ -34,7 +31,7 @@ export default class HomePageComponent extends Component {
           </Text>
          
           <Blink style={styles.instructions} text="This will blink forever!"/>
-          <Spock url={pic}/>
+          <Spock url={require('../images/spock.jpg')}/>
           <ButtonBasics onPress={() => navigate('Encrypt')}/>
         </View>
     );
