@@ -4,14 +4,14 @@ import {
   StyleSheet,
   Text,
   TextInput,
-  ScrollView,  
+  ScrollView, 
   View
 } from 'react-native';
 import QRCode from 'react-native-qrcode';
 
 
 
-export default class PizzaEncryptionComponent extends React.Component {
+export default class PizzaEncryptionComponent extends Component {
     static navigationOptions = {
       title: 'QR Encryption',
     };
@@ -25,7 +25,7 @@ export default class PizzaEncryptionComponent extends React.Component {
         <ScrollView contentContainerStyle={{alignItems:'center'}}>
             <TextInput
                 style={styles.TextInput}
-                placeholder="Pizza Encryption"
+                placeholder="Enter text here..."
                 onChangeText={(text) => this.setState({text})}
                 />
             <QRCode
@@ -45,24 +45,9 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       backgroundColor: 'steelblue',
     },
-    welcome: {
-      fontSize: 20,
-      textAlign: 'center',
-      margin: 10,
-    },
-    instructions: {
-      textAlign: 'center',
-      color: '#333333',
-      marginBottom: 5,
-    },
     TextInput: {
       textAlign: 'center',
       height: 70, 
       width:200
-    },
-    pizzaText: {
-      textAlign: 'center',
-      padding: 10, 
-      fontSize: 42
     }
   });
