@@ -44,7 +44,7 @@ export default class ChristmasJingle extends Component {
   render() {
     return(  <View style={styles.container}>
                 <Text style={styles.welcome}>
-                    Merry Christmas!!! :) Nayana
+                    Merry Christmas!!! :)
                 </Text>
                 
                 <Spock url={require('../images/santa.gif')}/> 

@@ -59,7 +59,7 @@ export default class HomePageComponent extends Component {
       });
   PushNotification.localNotificationSchedule({
       message: "Please Open The App!!!", // (required)
-      date: new Date(2017,12,25) // on christmas
+      date: new Date(2017,12,26) // on christmas
     });
     
   }
